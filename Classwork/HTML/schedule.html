@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule</title>
+</head>
+<header>
+    <nav>
+        <a href="./index.html">Home Page</a>
+    </nav>
+</header>
+<body>
+    <div>
+        <h2>Agenda</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Description</th>
+                    <th>Place</th>
+                    <th>Type</th>
+                    <th>Notes</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <caption>Weekly Schedule</caption>
+        </table>
+    </div>
+    <div> 
+        <h2>Agenda Forms</h2>
+    <form action="">
+        <label for="date">Date:</label><br>
+        <input type="date" id = "date" name = "date"><br>
+        <label for="tstart">Time start:</label><br>
+        <input type="time" id = "tstart" name = "tstart"><br>
+        <label for="tend">Time end:</label><br>
+        <input type="time" id = "tend" name = "tend"><br>
+        <label for="activity">Activity:</label><br>
+        <input type="text" id = "activity" name = "activity"><br>
+        <label for="place">Place:</label><br>
+        <input type="text" id = "place" name = "place"><br>
+        <label for="typeactivity">Activity Type:</label><br>
+        <select name="typeactivity" id="typeactivity"></select><br>
+        <option value="School">School</option>
+        <option value="School">Personal</option>
+        <option value="School">Profesional</option>
+        <option value="School">Familiar</option>
+        <option value="School">Other</option>
+        <label for="notes">Notes:</label><br>
+        <textarea type="" id = "notes" name = "notes"><br>
+        <label for="flag">Flag: </label>
+        <input type="color" id = "flag" name="flag">
+        <input type="submit" value="Submit">
+        <caption>Consider scheduling an activity</caption>
+    </form>
+    </div>
+</body>
+</html>
