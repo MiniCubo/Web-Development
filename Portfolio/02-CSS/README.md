@@ -1,4 +1,4 @@
-# CSS Exercises
+ # CSS Exercises
 
 The exercises in this section will help to understand concepts behind layout and positioning of elements in the screen.
 

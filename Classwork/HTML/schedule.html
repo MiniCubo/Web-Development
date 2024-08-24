@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekly Schedule</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./Images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./Images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./Images/favicon-32x32.png">
+<link rel="manifest" href="./Images/site.webmanifest">
+<link rel="mask-icon" href="./Images/safari-pinned-tab.svg color=">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 </head>
 <header>
     <nav>
@@ -34,27 +42,41 @@
     <form action="">
         <label for="date">Date:</label><br>
         <input type="date" id = "date" name = "date"><br>
+        <hr>
         <label for="tstart">Time start:</label><br>
         <input type="time" id = "tstart" name = "tstart"><br>
+        <hr>
         <label for="tend">Time end:</label><br>
         <input type="time" id = "tend" name = "tend"><br>
+        <hr>
         <label for="activity">Activity:</label><br>
         <input type="text" id = "activity" name = "activity"><br>
+        <hr>
         <label for="place">Place:</label><br>
         <input type="text" id = "place" name = "place"><br>
+        <hr>
         <label for="typeactivity">Activity Type:</label><br>
-        <select name="typeactivity" id="typeactivity"></select><br>
+        <select name="typeactivity" id="typeactivity" >
+        <hr>
+        <option value="none">Select an Option</option>
         <option value="School">School</option>
         <option value="School">Personal</option>
         <option value="School">Profesional</option>
         <option value="School">Familiar</option>
         <option value="School">Other</option>
+    </select><br>
+    <hr>
         <label for="notes">Notes:</label><br>
-        <textarea type="" id = "notes" name = "notes"><br>
-        <label for="flag">Flag: </label>
-        <input type="color" id = "flag" name="flag">
-        <input type="submit" value="Submit">
-        <caption>Consider scheduling an activity</caption>
+        <textarea type="" id = "notes" name = "notes"></textarea><br>
+        <hr>
+        <label for="flag">Flag: </label><br>
+        <input type="color" id = "flag" name="flag"><br>
+        <hr>
+        <label for="check">Busy Day</label><br>
+        <input type="checkbox" id = "check" name="check">
+        <input type="checkbox" id = "check" name="check"><br>
+        <hr>
+        <input type="submit" value="Submit"><br>
     </form>
     </div>
 </body>

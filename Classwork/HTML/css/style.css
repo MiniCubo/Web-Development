@@ -1,0 +1,15 @@
+hr{
+    border-color: gray;
+    border-width: 5px;
+    border-style: none;
+    border-top-style: double;
+}
+
+a :active{
+    color: red;
+}
+::selection{
+    background-color: gray;
+    color: white;
+    text-decoration: underline;
+}
