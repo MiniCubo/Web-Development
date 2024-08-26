@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+}
+.container{
+    display: relative;
+}
+.div{
+    width: 200px;
+    height: 200px;
+    display: absolute;
+    justify-content: center;
+    align-items: center;
+}
+.top  {
+    background-color: red;
+    border: solid black 10px;
+    padding: 20px;
+    left: 500px;
+}
+.mid  {
+    background-color: green;
+    border: solid black 20px;
+}
+.bot  {
+    background-color: blue;
+    border: solid black 10px;
+}
