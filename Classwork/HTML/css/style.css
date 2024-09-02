@@ -1,10 +1,16 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 hr{
     border-color: gray;
     border-width: 5px;
     border-style: none;
     border-top-style: double;
 }
-
+/*
+!important is to make an attribute non-changeable
+*/
 a :active{
     color: red;
 }
@@ -12,4 +18,62 @@ a :active{
     background-color: gray;
     color: white;
     text-decoration: underline;
+}
+img {
+    width: 80px;
+    border: solid;
+}
+.my-photo{
+    width: 130px;
+    height: 180px;
+    border: none;
+}
+.imagelocation {
+    width: 400px;
+    border: none;
+}
+.musicians{
+    width: 300px;
+    border: none;
+}
+li {
+    text-decoration: underline;
+}
+#bday table{
+    border: 1px double black;
+}
+#bday thead{
+    background-color: gray;
+    color: white;
+    border: 1px double black;
+}
+
+#bday tbody tr td:nth-child(even){
+    background-color: gray;
+    color: white;
+    border: 1px double black;
+}
+#bday tbody tr td:nth-child(odd){
+    background-color: gainsboro;
+    color: white;
+    border: 1px double black;
+}
+#bday tfoot{
+    border: none;
+}
+.main{
+    border: 5px double red;
+}
+.image{
+    display:inline;
+    flex-wrap: wrap;
+    margin-left: 10px;
+}
+.location{
+    display: inline-block;
+    position: relative;
+}
+.description{
+    display: flex;
+    width: 50%;
 }
