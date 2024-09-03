@@ -11,7 +11,7 @@ This exercise will guide us to learn and experience the basic concepts of CSS in
   - 'Merriweather', serif
 - Make sure that all the allignment is centered
 - Change the font of all the h1s to:
-  - 'Sacramento', cursive
+  -   
   - Change the color to one that plays well with your background.
   - Increase the font size to 5.5 rem
   - Add a margin of 50px

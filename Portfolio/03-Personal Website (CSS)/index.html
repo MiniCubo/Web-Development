@@ -1,12 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Website - CSS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My personal webpage</title>
+    <link rel="stylesheet" href="./css/style.css" type = "text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./Images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./Images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./Images/favicon-32x32.png">
+<link rel="manifest" href="./Images/site.webmanifest">
+<link rel="mask-icon" href="./Images/safari-pinned-tab.svg color=">
+<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 </head>
+<header>
+    <nav>
+        <a href="./destination.html">My Favourite Spots</a>
+        <a href="./musicians.html">Musicians</a>
+        <a href="./schedule.html">Weekly Schedule</a>
+        <a href="https://www.facebook.com/serkgdl?locale=es_LA" target="_blank">Kipling Country School</a>
+        <a href="https://www.altamira.edu.mx/" target="_blank">Colegio Altramira</a>
+        <a href="https://www.up.edu.mx/" target="_blank">Universidad Panamericana</a>
+    </nav>
+</header>
 <body>
-  
+    <div class="About">
+        <div class = "image section">
+            <div>
+                <h1>Álvaro Samuel Velázquez Ramírez</h1>
+            </div>
+            <div>
+                <h2>Current Job Title</h2>
+                <p>College Student in UP, in the career of ISGC <br/>Insurgentes 197, <i>Zapopan</i></p>
+                <p>I am passionate about videogames and I want to learn something new every day.
+                    <br>If you want to see my family birthdays it's <a href="#bday">here</a>.
+                </p>
+            </div>
+        </div>
+            <img src="./Images/my_photo.jpeg" alt="a photo of the author of the webpage" class = "my-photo"> 
+    </div>
+        <hr/>
+    <div>
+        <blockquote cite="https://www.brainyquote.com/quotes/satoru_iwata_977802" ><i>On my business card, I am a corporate president. In my mind, I am a computer programmer. But in my heart, I am a gamer.</i> 
+            <br>--Satoru Iwata
+        </blockquote>
+        <h2>Background</h2>
+        <p>I want to learn <strong>Web Development</strong> to start making money, but I want to pursue my passion of making <strong>videogames</strong>.
+            Since I was young I've played many videogames and have learnt so much from them. The person I am now is because of videogames.
+            So I want to give back to the community joy as it did in my childhood.
+        </p>
+    </div>
+    <div>
+        <h2>Education</h2>
+        <ul class="edu table">
+            <li><span><em>2010-2013</em> | Pre-elementary and First two grades of elementary: <br><b>Kipling Country School</b></span>
+            <a href="https://www.facebook.com/serkgdl?locale=es_LA" target="_blank"><img src="./Images/kipling.png" alt="logo of kipling country school" ></a>
+            </li>
+            <li><span><em>2013-2023</em> | Elementary, middle and high school: <br><b>Colegio Altamira</b></span>
+            <a href="https://www.altamira.edu.mx/" target="_blank"><img src="./Images/altamira.png" alt="Colegio Altamira's school logo" ></a>
+            </li>
+            <li><span><em>2023-now</em> | College: <br><b>Universidad Panamericana</b></span>
+            <a href="https://www.up.edu.mx/" target="_blank">
+            <img src="./Images/Escudo_Universidad_Panamericana.png" alt="Universidad Panamericana's college badge" >
+            </a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h2>Skills</h2>
+        <ol start="1" type="I">
+            <li>Coding: <i>80%</i></li>
+            <li>Sports: <i>50%</i></li>
+            <li>Making Videogames: <i>40%</i></li>
+            <li>Learning languages: <i>30%</i></li>
+            <li>Waking up in the morning: <i>10%</i></li>
+        </ol>
+    </div>
+    <div>
+        <h2>Hobbies</h2>
+        <aside>
+            <h3>Favourite food</h3>
+            <h4>Top 5 cuisines</h4>
+            <ol>
+                <li>Mexican</li>
+                <li>Korean</li>
+                <li>Italian</li>
+                <li>Spanish</li>
+                <li>Argentinian</li>
+            </ol>
+            <h4>Bottom 3 cuisines</h4>
+            <ol start="19">
+                <li>English</li>
+                <li>American</li>
+                <li>French</li>
+            </ol>
+        </aside>
+        <h3>Books, Movies & TV Shows</h3>
+        <ul class = "hobbies table">
+            <li>
+            <div class = "section1">
+                <img src="./Images/books.png" alt="a drawing of books" >
+                <h3>Books:</h3>
+            </div>
+            <div class="section2">
+                <ol>
+                    <li>Ender's Game</li>
+                    <li>Mistborn</li>
+                    <li>To kill a Mockingbird</li>
+                </ol>
+            </div>
+            </li>
+            <li>
+                <div class="section1">
+                    <img src="./Images/movie_roll.png" alt="a drawing of a movie roll" >
+                    <h3>Movies:</h3>
+                </div>
+                <div class="section2">
+                    <ol>
+                        <li>Coco</li>
+                        <li>Hercules</li>
+                        <li>Treasure Planet</li>
+                    </ol>
+                </div>
+            
+            </li>
+            <li>
+                <div class="section1">
+                    <img src="./Images/tv.png" alt="a drawing of a television">
+                    <h3>TV Shows</h3>
+                </div>
+                <div class = "section2">
+                    <ol>
+                        <li>Over the Garden</li>
+                        <li>Gravity Falls</li>
+                        <li>Adventure Time</li>
+                    </ol>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h2 >Family birthdays</h2>
+        <div class = "table">
+            <table id = "bday">
+                <thead>
+                    <tr>
+                        <th colspan="2">Name</th>
+                        <th rowspan="2">Birthday</th>
+                    </tr>
+                    <tr>
+                        <th >Name</th>
+                        <th>Lastname</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sergio</td>
+                        <td>Velázquez Rodríguez</td>
+                        <td>March 21st</td>
+                    </tr>
+                    <tr>
+                        <td>Adrían Isaac</td>
+                        <td>Velázquez Ramírez</td>
+                        <td>February 13rd</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>3 people</td>
+                    </tr>
+                </tfoot>
+                <caption>Table of birthdays</caption>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
