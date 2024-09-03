@@ -87,7 +87,7 @@ aside{
     width: 100%;
 }
 aside > div{
-    width: 33%;
+    width: 50%;
     background-color: inherit !important;
 }
 .hobbies > li{
@@ -95,7 +95,9 @@ aside > div{
     margin: 20px;
     width: 33%;
 }
-
+.hobbies ol{
+    list-style-position: outside;
+}
 .hobbies .section1{
     display: flex;
     align-content: center;
@@ -105,8 +107,15 @@ aside > div{
 .hobbies .section1 h3{
     margin-left: 20px;
 }
-.hobbies .section2{
+.section2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
     width: 100%;
+}
+.section2 ol{
+    text-align: center;
 }
 .hobbies li img{
     height: 50px;
