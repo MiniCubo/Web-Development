@@ -2,8 +2,8 @@
     font-family: 'Merriweather', serif;
 }
 body{
-    background-color: #FFF8E8;
-    text-align: center;
+    background-color: #fbe6b5 !important;
+    text-align: center !important;
 }
 h1{
     font-family: 'Sacramento', cursive;
@@ -54,6 +54,7 @@ header{
     width: 150px;
 }
 ul{
+    background-color: inherit;
     display: flex;
     width: 100vw;
     list-style-position: inside;
@@ -67,15 +68,34 @@ ul{
 .edu li img{
     margin-left: 5px;
 }
+.edu li em{
+    background-color: inherit;
+}
+.edu li b{
+    background-color: inherit;
+}
 ol{
     list-style-position: inside;
     padding-inline-start: 0px;
+}
+.hobbies{
+    display: flex;
+    flex-direction: column;
+}
+aside{
+    display: flex;
+    width: 100%;
+}
+aside > div{
+    width: 33%;
+    background-color: inherit !important;
 }
 .hobbies > li{
     display: flex;
     margin: 20px;
     width: 33%;
 }
+
 .hobbies .section1{
     display: flex;
     align-content: center;
@@ -90,24 +110,50 @@ ol{
 }
 .hobbies li img{
     height: 50px;
+    background-color: inherit;
+}
+.book{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0px !important;
+
+}
+.book li{
+    width: 33%;
+    background-color: #fbe6b5 !important;
+}
+.section2{
+    background-color: #fbe6b5 !important;
+}
+.section2 ol{
+    background-color: #fbe6b5;
+    padding: 0px !important;
+}
+.section2 ol li{
+    background-color: #fbe6b5;
+}
+.hobbies li h3{
+    background-color: inherit;
 }
 .table{
     display: flex;
     justify-content: center;
     align-content: center;
 } 
-table{
+.table table{
     border-collapse: collapse; 
-    background-color: #674636;
     color: black;
     width: 100%;
 }
-table thead{
-    color: white;
-}
 .table table tr{
-    border: 1px solid;
+    border: 1px black solid;
 }
+table thead tr{
+    background-color: #85695b !important;
+    color: white !important;
+}
+
 .table table tbody tr :nth-child(even){
     background-color: #AAB396;
 }
@@ -120,8 +166,9 @@ table thead{
 .table table th{
     border: 1px solid;
 }
-table tfoot{
-    color: white;
+table tfoot tr{
+    background-color: #85695b !important;
+    color: white !important;
 }
 hr{
     border-color: black;

@@ -4,7 +4,7 @@
 
 body {  
     margin: 0px;
-    border-collapse: collapse; 
+      
 }
 .top{
     margin: 20px 20px 0px 20px;
@@ -14,6 +14,7 @@ body {
     border-width: 15px 15px 0px 15px;
     display: flex;
     flex-direction: row;
+      
 }
 .bot{
     margin: 0px 20px 20px 20px;
@@ -23,56 +24,66 @@ body {
     border-width: 0px 15px 15px 15px;
     display: flex;
     flex-direction: row;
+      
 }
 .topleft{
     margin: 5px 0px 0px 5px;
     display: flex;
     flex-direction: row;
+      
 }
 .topleft .thin{
     width: 20%;
     height: 100%;
     border: var(--width) solid;
     box-sizing: border-box;
+      
 }
 .topleft .wide{
     width: 60%;
     height: 100%;
     border: var(--width) solid;
     box-sizing: border-box;
+      
 }
 .topleft .two{
     width: 20%;
     height: 100%;
     box-sizing: border-box;
+      
 }
 .topleft .two .box1{
     width: 100%;
     height: 20%;
     border: var(--width) solid;
     box-sizing: border-box;
+      
 }
 .topleft .two .box2{
     width: 100%;
     height: 80%;
     border: var(--width) solid;
     box-sizing: border-box;
+      
 }
 .topright{
     margin: 5px 5px 0px 0px;
     display: flex;
     flex-direction: row;
+      
 }
 .topright .two {
     width: 60%;
     height: 100%;
     box-sizing: border-box;
+      
 }
 .topright .two .box1{
     width: 100%;
     height: 20%;
     border: var(--width) solid;
     box-sizing: border-box;
+      
 }
 .topright .two .box2{
     width: 100%;
@@ -80,11 +91,13 @@ body {
     border: var(--width) solid;
     background-color: red;
     box-sizing: border-box;
+      
 }
 .topright .thin {
     width: 40%;
     height: 100%;
     box-sizing: border-box;
+      
 }
 .topright .thin .box1{
     width: 100%;
@@ -92,28 +105,33 @@ body {
     border: var(--width) solid;
     box-sizing: border-box;
     background-color: yellow;
+      
 }
 .topright .thin .box2{
     width: 100%;
     height: 80%; 
     border: var(--width) solid;
     box-sizing: border-box;
+      
 }
 .botleft{
     margin: 0px 0px 5px 5px;
     display: flex;
     flex-direction: row;
+      
 }
 .botleft .left{
     height: 100%;
     width: 20%;
     box-sizing: border-box;
+      
 }
 .botleft .left .box1{
     height: 80%;
     width: 100%;
     border: var(--width) solid;
     box-sizing: border-box;
+      
 
 }
 .botleft .left .box2{
@@ -121,11 +139,13 @@ body {
     width: 100%;
     border: var(--width) solid;
     box-sizing: border-box;
+      
 }
 .botleft .mid{
     height: 100%;
     width: 60%;
     box-sizing: border-box;
+      
 }
 .botleft .mid .box1{
     height: 80%;
@@ -133,34 +153,40 @@ body {
     border: var(--width) solid;
     box-sizing: border-box;
     background-color: blue;
+      
 }
 .botleft .mid .box2{
     height: 20%;
     width: 100%;
     border: var(--width) solid;
     box-sizing: border-box;
+      
 }
 .botleft .right{
     height: 100%;
     width: 20%;
     box-sizing: border-box;
+      
 }
 .botleft .right .box1{
     height: 80%;
     width: 100%;
     border: var(--width) solid;
     box-sizing: border-box;
+      
 }
 .botleft .right .box2{
     height: 20%;
     width: 100%;
     border: var(--width) solid;
     box-sizing: border-box;
+      
 }
 .botright{
     margin: 0px 5px 5px 0px;
     display: flex;
     flex-direction: row;
+      
 }
 .botright .left{
     height: 100%;
