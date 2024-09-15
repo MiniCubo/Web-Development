@@ -1,0 +1,11 @@
+.accordion-section{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px;
+}
+.fun-fact{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px 0px;
+}

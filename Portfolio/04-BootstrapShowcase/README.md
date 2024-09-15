@@ -26,25 +26,25 @@ Select 5 elements from the following list and make a small demo of how would you
 ---
 
 - Color mode
-- Navbar with search field
+- Navbar with search field °°
 - Sticky footer
 - Collapsible sidebar
 - Drop downs with icon
 - Offcanvas content
 - Pagination on content
-- Complex modals
+- Complex modals °°
 - Badges with image and action
 - Breadcrumbs with icons
 - Loading buttons
-- Carousel with title and text
-- Hero with centered screenshot
+- Carousel with title and text °°
+- Hero with centered screenshot °°
 - Scrollspy
 - Toast
 - Sign in form
 - Album
 - Pricing
 - Checkout
-- Blog
+- Blog °°
 
 ---
 
