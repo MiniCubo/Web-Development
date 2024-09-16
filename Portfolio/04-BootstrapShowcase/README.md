@@ -33,18 +33,18 @@ Select 5 elements from the following list and make a small demo of how would you
 - Offcanvas content
 - Pagination on content
 - Complex modals °°
-- Badges with image and action
+- Badges with image and action °°
 - Breadcrumbs with icons
 - Loading buttons
-- Carousel with title and text °°
+- Carousel with title and text 
 - Hero with centered screenshot °°
 - Scrollspy
 - Toast
-- Sign in form
+- Sign in form **
 - Album
 - Pricing
 - Checkout
-- Blog °°
+- Blog 
 
 ---
 

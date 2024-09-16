@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="./styles.css" type="text/css" rel="stylesheet">
+    <title>Demo</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">PetCo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="d-flex" role="search" autocomplete="off">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput" list = "null">
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div>
+        <div id = "#companions" class = "my-5"></div>
+            <div class="px-4 pt-5 my-5 text-center border-bottom">
+                <h1 class="display-4 fw-bold text-body-emphasis">Best companions</h1>
+                <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">
+                    Dogs are loyal, loving companions known for their unwavering devotion and affection toward humans. They come in a wide variety of breeds, each with its own unique characteristics, from playful and energetic to calm and protective.</p>
+                </div>
+                <div class="overflow-hidden" style="max-height: 40vh;">
+                <div class="container px-5 h-25">
+                    <img src="background.jpg" class="img-fluid border rounded-3 shadow-lg" alt="dog peeking over" width="700" height="500" loading="lazy">
+                </div>
+                </div>
+            </div>
+        </div>
+        <div id= "#download" class = "section2 my-5" >
+            <button type="button" class="btn btn-primary my-5 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Want to try the download function?
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Download</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h1>
+                            Puppies
+                        </h1>
+                        <p>
+                            A puppy is a juvenile dog. Some puppies can weigh 1–1.5 kg (2.2–3.3 lb), while larger ones can weigh over 7 kg (15 lb). All puppies display primary altriciality and healthy puppies grow quickly after birth. A puppy's coat color may change as the puppy grows older, as is commonly seen in breeds such as the Yorkshire Terrier. Puppy refers specifically to young dogs, while pup may be used for other animals such as wolves, seals, giraffes, guinea pigs, rats or sharks.
+                        </p>
+                        <div class="d-flex flex-column gap-2 justify-content-center">
+                            <span class="badge d-flex align-items-center text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
+                            <img class="rounded-circle me-1" width="24" height="24" src="puppy-play-group-beagle.jpg" alt="puppy">
+                            <a href="puppy-play-group-beagle.jpg" download>Image 1</a>
+                            </span>
+                            <span class="badge d-flex align-items-center text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle rounded-pill">
+                            <img class="rounded-circle me-1" width="24" height="24" src="puppy2.jfif" alt="puppy">
+                            <a href='puppy2.jfif' download>Image 2</a>
+                            </span>
+                            <span class="badge d-flex align-items-center text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill">
+                            <img class="rounded-circle me-1" width="24" height="24" src="puppy3.jfif" alt="puppy">
+                            <a href='puppy3.jfif' download>Image 3</a>
+                            </span>
+                            <span class="badge d-flex align-items-center text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-pill">
+                            <img class="rounded-circle me-1" width="24" height="24" src="puppy4.jpg" alt="puppy">
+                            <a href='puppy4.jpg' download>Image 4</a>
+                            </span>
+                            <span class="badge d-flex align-items-center text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-pill">
+                            <img class="rounded-circle me-1" width="24" height="24" src="puppy5.jfif" alt="puppy">
+                            <a href='puppy5.jfif' download>Image 5</a>
+                            </span>
+                            <span class="badge d-flex align-items-center text-info-emphasis bg-info-subtle border border-info-subtle rounded-pill">
+                            <img class="rounded-circle me-1" width="24" height="24" src="puppy6.jfif" alt="puppy">
+                            <a href='puppy6.jfif' download>Image 6</a>
+                            </span>
+                            <span class="badge d-flex align-items-center text-dark-emphasis bg-light-subtle border border-dark-subtle rounded-pill">
+                            <img class="rounded-circle me-1" width="24" height="24" src="puppy7.jfif" alt="puppy">
+                            <a href='puppy7.jfif' download>Image 7</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary download-all" >Download All</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-signin w-50 mx-auto my-5" id="signIn">
+        <form>
+          <img class="mb-4" src="logo.png" alt="company logo" width="72" height="57">
+          <h1 class="h3 mb-3 fw-normal">Sing in to receive news and exclusive photos</h1>
+      
+          <div class="form-floating my-1">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating my-1">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+      
+          <div class="form-check text-start my-3">
+            <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Remember me
+            </label>
+          </div>
+          <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src = "script-demo.js" charset="UTF-8"></script>  
+
+</body>
+</html>
