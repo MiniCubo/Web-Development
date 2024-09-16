@@ -12,19 +12,19 @@ Complete the clock exercise by completing the tasks requested in the code by the
 
 ---
 
-## Fibonacci - 1 pt
+## Fibonacci - 1 pt °°
 
 Solve for the requested fibonacci number.
 
 ---
 
-## Images - 1 pt
+## Images - 1 pt °°
 
 Move the image around the screen using the controls. Make sure that it always stay inside the viewport
 
 ---
 
-## Primes - 2 pts
+## Primes - 2 pts °°
 
 Extract the prime factors of the number given and show them in the "pf" span.
 
@@ -38,7 +38,7 @@ Following are the steps to find all prime factors.
 
 ---
 
-## Next primes - 1 pt.
+## Next primes - 1 pt. °°
 
 Get the next prime value after the number provided.
 
@@ -52,7 +52,7 @@ Transform the input received into its pig latin version. Fix or complete the cod
 
 ---
 
-## Sieve of Eratosthenes - 3 pts
+## Sieve of Eratosthenes - 3 pts °°
 
 Get the value provided and then get all the prime numbers below that one.
 

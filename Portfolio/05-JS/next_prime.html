@@ -16,11 +16,11 @@
             var number = parseInt(document.getElementById("num").value);
             var maxNum = parseInt(1299827);
             if (number < maxNum && !isNaN(number)) {
-                for (var i = number + 1; i < maxNum; i++) {
-                    //TODO: check if the current number is a prime or not
-                    // If it is, then return it
-                    continue;
-                }
+                var arr = isPrime(number)
+                    while(!isPrime(number)){
+                        number++
+                    }
+                    document.getElementById("num").value = number
             } else {
                 window.alert("Please Enter Number Below 1299827 or Enter A Valid Integer");
                 id.value = "";
