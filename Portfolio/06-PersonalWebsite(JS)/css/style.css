@@ -1,0 +1,248 @@
+*{
+    font-family: 'Merriweather', serif;
+}
+body{
+    background-color: #FFF8E8;
+    text-align: center;
+}
+h1{
+    font-family: 'Sacramento', cursive;
+    font-size: 5.5rem;
+    color: #674636;
+    margin: 50px;
+}
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    padding-bottom: 10px;
+    color: #AAB396;
+}
+h3{
+    font-family: 'Montserrat', sans-serif;
+    color:#808b68;
+}
+nav{
+    text-align: start;
+}
+a{
+    text-decoration: none;
+    font-weight: bolder;
+}
+a:visited{
+    color: black;
+}
+a:visited:hover{
+    color: green;
+}
+a:hover{
+    color: green;
+}
+div:nth-child(even){
+    background-color: #F7EED3;
+}
+header{
+    display: inline;    
+}
+.About .image{
+    display: flex;
+    align-items: center;
+}
+.About .image div{
+    width: 50vw;
+}
+.my-photo{
+    width: 150px;
+}
+ul{
+    display: flex;
+    width: 100vw;
+    list-style-position: inside;
+    padding-inline-start: 40px;
+}
+.edu li{
+    display: flex;
+    margin: 20px;
+    width: 33%;
+}
+.edu li img{
+    margin-left: 5px;
+}
+ol{
+    list-style-position: inside;
+    padding-inline-start: 0px;
+}
+.hobbies > li{
+    display: flex;
+    margin: 20px;
+    width: 33%;
+}
+.hobbies .section1{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+}
+.hobbies .section1 h3{
+    margin-left: 20px;
+}
+.hobbies .section2{
+    width: 100%;
+}
+.hobbies li img{
+    height: 50px;
+}
+.table{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+} 
+table{
+    border-collapse: collapse; 
+    background-color: #674636;
+    color: black;
+    width: 100%;
+}
+table thead{
+    color: white;
+}
+.table table tr{
+    border: 1px solid;
+}
+table tbody tr{
+    background-color: #F7EED3;
+}
+.table table tbody td{
+    border: 1px solid;
+}
+.table table th{
+    border: 1px solid;
+}
+table tfoot{
+    color: white;
+}
+hr{
+    border-color: black;
+    border-width: 5px;
+    border-top-style: dotted;
+    border-bottom: none;
+    width: 4vw;
+    margin: 10px 100px;
+}
+img{
+    width: 50px;
+}
+
+/*
+    CSS for destinations
+*/
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.main div{
+    margin: 0px 10px;
+}
+.main .image img{
+    width: 100%;
+}
+.main .description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.main .description .box1 {
+    width: 30%;
+}
+.main .description .box2 {
+    width: 70%;
+}
+
+/*
+Css for the musicians page
+*/
+.column {
+    float: left;
+    width: 30%;
+    height: 100%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+
+  .container ul{
+    display:inline;
+  }
+  .container li{
+    margin: 5px 0px;
+  }
+  .container audio{
+    margin: 10px 0px;
+  }
+  .card img{
+    width: 100%;
+  }  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .title {
+    color: grey;
+  }
+
+/*
+  CSS for the schedule page
+*/
+.forms{
+    border: 5px dotted black;
+    background-color: aliceblue;
+}
+.forms input{
+    border-radius: 10px;
+    background-color:#F7EED3;
+    margin: 5px 0px;
+}
+.forms select{
+    border-radius: 10px;
+    background-color:#F7EED3;
+}
+.forms textarea{
+    border-radius: 10px;
+    background-color:#F7EED3;
+}
+.mountain{
+    position: static;
+    top:5px;
+}
+.clouds{
+    width: 100px;
+    position: sticky;
+    top: 95vh;
+    left: 95vw;
+}
+.submit{
+    border-radius: 10px;
+    background-color:#F7EED3;
+    margin: 5px 0px;
+}
+/*
+!important is to make an attribute non-changeable
+*/
