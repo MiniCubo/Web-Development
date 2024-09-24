@@ -1,5 +1,5 @@
-const hero = require("superheros")
+import {randomSuperhero} from 'superheroes';
 
-const generate = hero.generateSuperhero()
+const generate = randomSuperhero();
 
-console.log(generate())
+console.log("Fear not! Here is "+ generate + " to save the day")

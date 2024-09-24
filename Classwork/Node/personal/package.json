@@ -2,6 +2,7 @@
   "name": "nodetesting",
   "version": "1.0.0",
   "description": "This is a project to showcase the use of npm",
+  "type" : "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
