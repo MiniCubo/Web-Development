@@ -12,8 +12,8 @@ app.route("/")
     res.render(__dirname + "/index.ejs", {bmi: ""})
 })
 .post((req, res)=>{
-   var w = req.body.weight
-   var h = req.body.height
+   var w = Number(req.body.weight)
+   var h = Number(req.body.height)
    var bmi = w/Math.pow((h),2)
    bmi = Math.round(bmi * 100) / 100
    res.render(__dirname + "/index.ejs", {bmi: bmi})
