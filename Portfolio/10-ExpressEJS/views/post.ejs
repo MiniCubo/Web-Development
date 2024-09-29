@@ -1,0 +1,12 @@
+<%- include("./partial/header.ejs"); %>
+    <h1>Edit the post: <%= title %></h1>
+
+    <form action="/editPost?id=<%= index %>" method = "POST">
+        <label for="title">Title</label><br>
+        <input type="text" name="title" id="title" value = "<%= title %>"><br><br>
+        <textarea name="content"><%= content %></textarea><br>
+        <input type="submit" value="Edit the post">
+    </form>
+
+    <a href="/deletePost?id=<%= index %>"><h3>Delete the post</h3></a>
+<%- include("./partial/footer.ejs"); %>

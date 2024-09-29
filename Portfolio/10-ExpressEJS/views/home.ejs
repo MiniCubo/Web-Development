@@ -1,0 +1,29 @@
+<%- include("./partial/header.ejs"); %>
+    <h1>Welcome <%= name %></h1>
+
+    <h1> POSTS </h1>
+    <% if(posts) {%>
+        <ul>
+        <% posts.forEach((element, index)=>{ %>
+            <li>
+                <h4><%= element.title %></h4>
+                <% if(element.content.length > 100){ %>
+                    <p><%= element.content.slice(0,100) %> <strong>...</strong></p>
+                <% }else{ %>
+                    <p><%= element.content %></p>
+                <% } %>
+                <small><%= element.author %></small><br>
+                <a href="/readMore?id=<%= index %>">Read More</a>
+            </li>
+        <% })%>
+        </ul>
+    <%}  %>
+
+    <h2>Submit a new post</h2>
+    <form action="/post" method = "POST">
+        <label for="title">Title</label><br>
+        <input type="text" name="title" id="title"><br><br>
+        <textarea name="content"></textarea><br>
+        <input type="submit" value="Submit the post">
+    </form>
+<%- include("./partial/footer.ejs"); %>
