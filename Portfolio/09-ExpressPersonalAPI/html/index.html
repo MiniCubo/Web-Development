@@ -19,7 +19,32 @@
                 <input type="text" name="name" id="name" placeholder="Name">
                 <input type="submit" value="go next">
             </form>
+    <% if (names.length !== 0) {%>
+        <% for(var i=0; i<names.length; i++) {%>
+            <h4>
+                Hello <a href= "wazzup?source=<%= i %>"><%= names[i] %></a>
+            </h4>
+        <% } %>
+    <% } %>
 
+    <form action="/task" method="POST">
+        New Task:
+        <input type = "text" name="task" id="task" placeholder="E.g. take out the trash">
+        <input type="submit">
+    </form>
+
+    <h1>TO DO LIST</h1>    
+    <% if(tasks) { %>    
+        <ul class ="list">
+        <% for(var i=0; i<tasks.length; i++) {%> 
+            <li><%= tasks[i] %></li>
+             <a href="/delete?source=<%= i %>">Delete</a><br>
+             <a href="/up?source=<%= i %>"><img src="/img/arrow_up.png" alt="arrow_up" width="20"></a><br>
+             <a href="/down?source=<%= i %>"><img src="/img/arrow_down.png" alt="arrow_down" width="20"></a>
+        <% } %>
+        </ul>
+    <% } %>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </body>
 
 </html>

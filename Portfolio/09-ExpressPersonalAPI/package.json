@@ -1,0 +1,21 @@
+{
+  "name": "09-expresspersonalapi",
+  "version": "1.0.0",
+  "description": "The 9th portfolio of UP Web Development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "error"
+  ],
+  "author": "Álvaro Samuel Velázquez Ramírez",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "nodemon": "^3.1.7"
+  }
+}
