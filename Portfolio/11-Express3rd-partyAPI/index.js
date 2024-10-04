@@ -48,6 +48,7 @@ app.route("/")
                     response.on("data", (data)=>{
                         var info = JSON.parse(data);
                         temp = info.main.temp;
+                        //console.log(info);
                         description = info.weather[0].description;
                         var icon = info.weather[0].icon;
                         var imageurl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";

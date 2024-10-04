@@ -10,21 +10,55 @@ app.use(express.static(__dirname + "/public"));
 
 app.route("/")
     .get((req,res) =>{
-        res.render("home", {bmi: 0});
+        var name = "Gabriel";
+        var bmi = 0;
+        var shoppingList = ["eggs", "milk", "apples"];
+        var students = [{
+            "id": 1321,
+            "name": "Luisa",
+            "lastname": "Fernandez",
+            "DOB": "22/11/2001"
+        },{
+            "id": 2321,
+            "name": "Maria",
+            "lastname": "Luisa",
+            "DOB": "22/02/1999"
+        },{
+            "id": 3323,
+            "name": "Ramón",
+            "lastname": "Fernandez",
+            "DOB": "03/02/1997"
+        }];
+        res.render("home", {name, bmi, shoppingList, students});
     })
     .post((req, res)=>{
         var weight = req.body.w;
         var height = req.body.h;
-        var bmi = weight/((height/100)*(height/100));
-        res.render("home", {bmi : bmi})
+        var bmi = Math.round(100*weight/((height/100)*(height/100)))/100;
+        var name = "Gabriel";
+        var shoppingList = ["eggs", "milk", "apples"];
+        var students = [{
+            "id": 1321,
+            "name": "Luisa",
+            "lastname": "Fernandez",
+            "DOB": "22/11/2001"
+        },{
+            "id": 2321,
+            "name": "Maria",
+            "lastname": "Luisa",
+            "DOB": "22/02/1999"
+        },{
+            "id": 3323,
+            "name": "Ramón",
+            "lastname": "Fernandez",
+            "DOB": "03/02/1997"
+        }];
+        res.render("home", {bmi, name, shoppingList, students});
     });
 
-app.get("/", (req, res) =>{
-    res.send("<h2>Hello World</h2><hr><p>This is just the index </p>");
-});
 
 app.get("/about", (req, res) =>{
-    res.send("<h1>I am Alvaro Samuel</h1>");
+    res.render("about", {});
 });
 app.route("/bmi")
     .get( (req, res)=>{

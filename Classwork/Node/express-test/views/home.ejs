@@ -1,19 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI calculator</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
+<%- include("./partials/header") -%>
     <h1><strong>BMI EJS</strong></h1>
+    <% if (name) {%>
+        <p>Hello <%= name %></p>
+    <%}; %>
     <form action="/" method = "POST">
         <input type = "number" name = "w" placeholder = "Weight in kg">
         <input type = "number" name = "h" placeholder = "Height in cms">
         <button type="submit" name = "submit">Calculate BMI</button>
     </form>
     <img src = "/img/images.png" alt = "weight scale">
-    <p>BMI: <span><%= bmi %></span></p>
-</body>
-</html>
+    <% if(bmi != 0) {%>
+        <p>BMI: <span><%= bmi %></span></p>
+    <% }; %>
+    <% if(locals.shoppingList && shoppingList.length != 0) {
+        var listTitle = "Shopping List";
+        var genericList = shoppingList;%>
+        <%- include("./partials/list", {listTitle, genericList}); -%>
+    <% } %>
+    <% if(locals.students && students.length != 0){ %>
+        <div>
+            <% students.forEach((element, index) =>{ %>
+                <h1><%= index+1 %>. <%= element.name  %> <%= element.lastname  %> (ID:<%= element.id %>)</h1>
+                <p> <%= element.DOB  %></p>
+                <hr>
+            <% }); %>
+        </div>
+    <% }; %> 
+<%- include("./partials/footer") -%>

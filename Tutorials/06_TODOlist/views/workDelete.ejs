@@ -1,0 +1,8 @@
+<% for (let i=0; i<newListItems.length; i++) { %>
+    <div class="item">
+      <form class="item delete-task" id = "<%= i %>" method="post" action="/work/delete?id=<%= newListItems[i]._id %>">
+        <input type="checkbox" onchange="submitForm('<%= i %>')">
+        <p><%=  newListItems[i].item  %></p>
+      </form>
+    </div>
+  <% } %>
