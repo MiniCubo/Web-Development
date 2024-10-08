@@ -13,14 +13,37 @@ img {
 
 #num,
 #code {
-    width: 35px;
+    width: 25%;
+    margin: 10px 0px;
 }
-
+form {
+    display: flex;
+    flex-direction: column;
+}
 form input,
 select {
+    width: 25%;
     border-style: none;
+    margin: 10px 0px;
 }
 
 input[type=text]:focus {
     border: 4px solid #c9b220;
+}
+.table h1{
+    margin: 5px 45%;
+}
+table {
+    background-color: white;
+    border: 1px solid black;
+    width: 100%;
+}
+table *{
+    border: 1px solid black;
+}
+tr :nth-child(odd){
+    background-color: #d1d1d1;
+}
+tr :nth-child(even){
+    background-color: #edebeb;
 }

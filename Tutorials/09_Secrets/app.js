@@ -15,9 +15,11 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
+const secret = process.env.SECRET;
+
 app.use(
   session({
-    secret: "Our little secret.",
+    secret: secret,
     resave: false,
     saveUninitialized: false,
   })
@@ -51,6 +53,18 @@ const User = new mongoose.model("User", userSchema);
 // - Configure the google strategy
 // * Remember to place the client and client secret in env variables
 
+passport.use(new GoogleStrategy({
+  clientID : GOOGLE_CLIENT_ID,
+  clientSecret: GOOGLE_CLIENT_SECRET,
+  callbackURL : "localhost:3000/secrets"
+},
+function(accessToken, refreshToken, profile, cb){
+  User.findOrCreate({googleId: profile.id}, function (err, user){
+    return cb(err, user);
+  });
+}
+));
+
 app.get("/", (req, res) => {
   res.render("home");
 });
@@ -64,8 +78,7 @@ app.get("/secrets", (req, res) => {
   res.render("secrets");
 });
 
-app
-  .route("/login")
+app.route("/login")
   .get((req, res) => {
     res.render("login");
   })
@@ -74,8 +87,8 @@ app
     // search for it in the DB, if user/password match,
     // Authenticate the user in the request header, and then
     // send to /secrets, else send error and back to home
-    console.log(req.body.username);
-    console.log(req.body.password);
+    //console.log(req.body.username);
+    //console.log(req.body.password);
     res.redirect("/secrets");
   });
 
