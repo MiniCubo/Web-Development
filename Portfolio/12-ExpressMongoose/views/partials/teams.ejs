@@ -1,0 +1,39 @@
+<h1>Scuderias</h1>
+            <!-- id,name,nationality,url --> 
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Nationality</th>
+                        <th>Url</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% teams.forEach((element)=>{ %>
+                        <% if(editTeam == element.id) {%>
+                            <tr>
+                                <form action="/confirmEditTeam/<%= editTeam  %>" method = "POST">
+                                    <td><input type="text" name = "name" value="<%= element.name %>"></td>
+                                    <td>
+                                        <select name="nation" id="nation">
+                                            <% countries.forEach((nation)=> {%>
+                                            <option value="<%= nation.label  %>" <% if(nation.label === element.nationality) {%>selected<%}  %>><%= nation.label  %></option>
+                                            <%})  %>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" name = "url" value="<%= element.url %>"></td>
+                                    <td><input type="submit"></td>
+                                </form>
+                            </tr>
+                        <%}  else{%>
+                            <tr>
+                                <td><%= element.name %></td>
+                                <td><%= element.nationality %></td> 
+                                <td><%= element.url %></td>
+                                <td><a href="/editTeam/<%= element.id %>">Edit</a></td>
+                            </tr>
+                        <%}  %>
+                    <% }) %>
+                </tbody>
+            </table>

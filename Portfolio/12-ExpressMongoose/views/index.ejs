@@ -5,8 +5,8 @@
         <h2>Driver information</h2>
         <input type="text" name="num" id="num" placeholder="Number" />
         <input type="text" name="code" id="code" placeholder="Code" />
-        <input type="text" name="name" id="name" placeholder="Name" />
-        <input type="text" name="lname" id="lname" placeholder="Last name" />
+        <input type="text" name="name" id="fname" placeholder="Forename" />
+        <input type="text" name="lname" id="sname" placeholder="Surname" />
         <br />
         <label for="dob">Date of birth: </label>
         <input type="date" name="dob" id="dob" />
@@ -14,95 +14,30 @@
         <input type="url" name="url" id="url" />
         <br />
         <label for="nation">Nationality: </label>
-        <select name="nation" id="nation">
-            <option value="ENG">England</option>
-            <option value="SPA">Spain</option>
-            <option value="GET">Germany</option>
-            <option value="FRA">France</option>
-            <option value="MEX">Mexico</option>
-            <option value="AUS">Australia</option>
-            <option value="FIN">Finland</option>
-            <option value="DEN">Denmark</option>
-            <option value="NET">Netherlands</option>
-            <option value="CAN">Canada</option>
-            <option value="MON">Monaco</option>
-            <option value="THA">Thailand</option>
-            <option value="JAP">Japan</option>
-            <option value="CHI">China</option>
-            <option value="USA">USA</option>
+        <select name="nation" id="nation" class = "nation">
+            <% countries.forEach((element)=> {%>
+            <option value="<%= element.label  %>"><%= element.label  %></option>
+            <%})  %>
         </select>
         <label for="team">Team: </label>
-        <select name="team" id="team">
-            <option value="mercedes">Mercedes</option>
-            <option value="aston_martin">Aston Martin</option>
-            <option value="alpine">Alpine</option>
-            <option value="hass_f1">Hass F1 Team</option>
-            <option value="red_bull">Red Bull Racing</option>
-            <option value="alpha_tauri">Alpha Tauri</option>
-            <option value="alpha_romeo">Alpha Romeo</option>
-            <option value="ferrari">Ferrari</option>
-            <option value="williams">Williams</option>
-            <option value="mc_laren">McLaren</option>
-
+        <select name="team" id="team" class="team">
+            <% teams.forEach((team)=>{ %>
+            <option value="<%= team.id  %>"><%= team.name %></option>
+            
+            <% }) %>
         </select>
         <p> <input type="submit" /> </p>
     </form>
-
+    <% if(driverList) {%>
+        <a href="/toggleTable">Go to the Teams Table</a>
+    <%}  else{%>
+        <a href="/toggleTable">Go to the Drivers Table</a>
+    <%}%>
     <div class = "table">
         <% if(driverList) {%>
-            <h1>Drivers</h1>
-            <!-- number,code,forename,surname,dob,nationality,url,current_team -->
-            <table>
-                <thead>
-                    <tr>
-                        <th>Number</th>
-                        <th>Code</th>
-                        <th>Forename</th>
-                        <th>Surname</th>
-                        <th>DOB</th>
-                        <th>Nationality</th>
-                        <th>URL</th>
-                        <th>Current Team</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% drivers.forEach((element)=>{ %>
-                        <tr>
-                            <td><%= element.num %></td>
-                            <td><%= element.code %></td> 
-                            <td><%= element.forename %></td> 
-                            <td><%= element.surname %></td> 
-                            <td><%= element.dob.toDateString() %></td>  
-                            <td><%= element.nationality %></td> 
-                            <td><%= element.url %></td>
-                            <% if (element.team) {%>
-                                <td><%= element.team.name %></td>
-                            <%}  %>
-                        </tr>
-                    <% }) %>
-                </tbody>
-            </table>
+            <%- include("./partials/drivers") -%>
         <% }else{ %>
-            <h1>Scuderias</h1>
-            <!-- id,name,nationality,url --> 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Nationality</th>
-                        <th>Url</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% teams.forEach((element)=>{ %>
-                        <tr>
-                            <td><%= element.name %></td>
-                            <td><%= element.nationality %></td> 
-                            <td><%= element.url %></td> 
-                        </tr>
-                    <% }) %>
-                </tbody>
-            </table>
+            <%- include("./partials/teams") -%>
         <% } %>
     </div>
 <%- include("./partials/footer") -%>

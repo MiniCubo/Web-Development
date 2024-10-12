@@ -1,17 +1,33 @@
 <%- include("./partials/header") -%>
     <h1><strong>BMI EJS</strong></h1>
-    <% if (name) {%>
-        <p>Hello <%= name %></p>
+    <% if (locals.name) {%>
+        <p>Hello <%= name %></p><br>
     <%}; %>
+    <a href="/joke">Tell me a joke.</a>
+    <% if(locals.joke) {%>
+        <% if(joke.setup) {%>
+            <p><%=joke.setup  %></p>
+            <p><%= joke.delivery %></p>
+        <%}  else{%>
+            <p><%= joke.joke  %></p>
+        <%}  %>
+    <% } %>
+    <hr>
     <form action="/" method = "POST">
         <input type = "number" name = "w" placeholder = "Weight in kg">
         <input type = "number" name = "h" placeholder = "Height in cms">
         <button type="submit" name = "submit">Calculate BMI</button>
     </form>
-    <img src = "/img/images.png" alt = "weight scale">
     <% if(bmi != 0) {%>
         <p>BMI: <span><%= bmi %></span></p>
-    <% }; %>
+    <% }; %>    
+    <img src = "/img/images.png" alt = "weight scale" width="50px">
+    <hr>
+    <h1>Add an item to the list</h1>
+    <form action="/add" method = "POST">
+        <input type = "text" name = "item" placeholder = "New item for list">
+        <button type="submit" name = "submit">Add</button>
+    </form>
     <% if(locals.shoppingList && shoppingList.length != 0) {
         var listTitle = "Shopping List";
         var genericList = shoppingList;%>
@@ -23,7 +39,23 @@
                 <h1><%= index+1 %>. <%= element.name  %> <%= element.lastname  %> (ID:<%= element.id %>)</h1>
                 <p> <%= element.DOB  %></p>
                 <hr>
-            <% }); %>
+            <% }) %>
         </div>
-    <% }; %> 
+    <% } %>
+    <h1>Dictionary check</h1>
+    <form action="/check" method = "POST">
+        <input type = "text" name = "word" placeholder = "Word to check">
+        <button type="submit" name = "submit">Check</button>
+    </form>
+    <% if(locals.found) {%>
+        <% if(found.error) {%> 
+            <p><%= found.error %></p>
+        <%} else {%>
+            <% if(found.found) {%>
+                <p>The word is in the dictionary</p>
+            <%} else {%>
+                <p>The word is not in the dictionary</p>
+            <%}%>
+        <%}%>   
+    <%} %>
 <%- include("./partials/footer") -%>

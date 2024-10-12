@@ -1,3 +1,19 @@
-body {
-    background-color:aqua;
+
+form{
+    margin: 10px 0px;
+}
+ul {
+    list-style-type: none;
+  }
+li{
+    margin: 5px;
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+li a{
+    color: black;
+}
+li a :hover{
+    color:red;
 }

@@ -8,7 +8,7 @@ const list_id = process.env.list_id;
 const server_prefix = "us8";
 
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({extended : true}));
 app.use(express.static("public"));
 
 
