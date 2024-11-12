@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 
 const fs = require("fs");
 const csv = require("fast-csv");
-const { elements } = require("chart.js");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

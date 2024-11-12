@@ -1,7 +1,7 @@
 <h2><%= listTitle %></h2>
 <ul>
     <% genericList.forEach((element, index)=>  {%>
-        <li><a href="/delete/<%= index  %>/Gabriel"><i class="fa-solid fa-trash"></i></a><%= element  %></li>
+        <li><a href="/delete/<%= index  %>/Gabriel"><i class="fa-solid fa-trash"></i></a><%= element.itemName  %> <%= element.itemQty  %></li>
     <% }); %>
 </ul>
 <h2>Students</h2>

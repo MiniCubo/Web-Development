@@ -26,6 +26,7 @@
     <h1>Add an item to the list</h1>
     <form action="/add" method = "POST">
         <input type = "text" name = "item" placeholder = "New item for list">
+        <input type="number" name = "qty" placeholder = "Quantity of the item">
         <button type="submit" name = "submit">Add</button>
     </form>
     <% if(locals.shoppingList && shoppingList.length != 0) {

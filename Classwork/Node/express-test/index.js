@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const https = require("https");
 const formData = require("form-data");
+const mongoose = require("mongoose");
+require("dotenv").config();
 
 app.engine("ejs", require("ejs").renderFile);
 app.set("view engine", "ejs");
@@ -10,7 +12,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
 
-var shoppingList = ["eggs", "milk", "apples"];
+var shoppingList = [
+    {itemName: "eggs", itemQty: 3}, 
+    {itemName: "milk", itemQty: 3}, 
+    {itemName: "bread", itemQty: 3}
+];
 var students = [{
     "id": 1321,
     "name": "Luisa",
@@ -29,6 +35,21 @@ var students = [{
 }];
 var joke = "";
 var found = "";
+
+var username = process.env.MONGOUSER;
+var password = process.env.MONGOPASSWORD;
+var db = process.env.DB;
+
+const mongoURL = `mongodb+srv://${username}:${password}@cluster0.ujrlb.mongodb.net/${db}?retryWrites=true&w=majority&appName=Cluster0`; 
+mongoose.connect(mongoURL, {});
+
+const shoppingItem = new mongoose.Schema({
+    itemName: String,
+    itemQty: Number
+    });
+shoppingItem.set("strictQuery", true);
+
+const SItem = mongoose.model("Item", shoppingItem);
 
 app.use((err, req, res, next)=>{
     console.error(err.stack);
@@ -71,13 +92,18 @@ app.get("/more", (req,res)=>{
 
 app.post("/add", (req, res)=>{
     var newItem = req.body.item;
-    shoppingList.push(newItem);
+    var qty = req.body.qty;
+    const Item = new SItem({
+        itemName: newItem,
+        itemQty : qty
+    });
+    Item.save();
+    shoppingList.push(Item);
     res.redirect("/");
 });
 
 app.get("/delete/:id/:author", (req, res)=>{
     var index = req.params.id;
-    console.log(req.params.author);
     delete shoppingList[index];
     res.redirect("/");
 });
