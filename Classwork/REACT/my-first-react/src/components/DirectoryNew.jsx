@@ -33,7 +33,7 @@ function DirectoryNew(props){
    }
 
     return(
-        <div>
+        <>
             <form onSubmit={submit}>
                 <input type = "text" placeholder="Name" name = "name" onChange={update} value = {entry.name}></input><br/>
                 <input type = "text" placeholder="Last Name" name= "lname" onChange={update} value = {entry.lname}></input><br/>
@@ -41,7 +41,7 @@ function DirectoryNew(props){
                 <input type = "number" placeholder="Age" name = "age" onChange={update} value = {entry.age}></input><br/>
                 <button type = "submit" >Add</button>
             </form>
-        </div>
+        </>
     )
 }
 

@@ -1,9 +1,13 @@
 import './App.css';
 import React, {useState} from "react";
 import Header from './components/Header';
-import Maths from "./components/Maths"
-//import Pictures from './components/Pictures';
+import Pictures from './components/Pictures';
 import Directory from './components/Directory';
+import Button from 'react-bootstrap/Button';
+import AppNavbar from './components/AppNavbar';
+import Profile from "./components/Profile";
+
+import { Routes,Route, Navigate } from 'react-router-dom';
 
 
 function App() {
@@ -21,6 +25,7 @@ function App() {
       return(
         <div>
           <h2>You must log in to see the directory</h2>
+          <Button onClick={()=>{setLogin(true);}} variant="primary">Log In</Button>
           <button onClick={()=>{setLogin(true);}}>Log In</button>
         </div>
       )
@@ -29,15 +34,22 @@ function App() {
 
   return (
     <div>
-      <header className='App-header'>
+      <AppNavbar/>
+      <Routes>
+        <Route exact path="/" element={<Pictures/>} />
+        <Route path="header" element={<Header num={number}/>}/>
+        <Route path="directory" element={conditionalRender()} />
+        <Route path="profile" element={<Profile />} />
+        <Route path= "*" element={<Navigate to="/"/>}/>
+      </Routes>
+      {/* <header >
         <Header num = {number}></Header>
         <Maths num = {number}>
           <p>Today is {dateFormated}</p>
         </Maths>
-        {/*<Pictures></Pictures>*/}
+        {<Pictures></Pictures>}
       </header>
-      <hr/>
-      {conditionalRender()}
+      <hr/> */}
     </div>
   );
 }
