@@ -1,13 +1,14 @@
 import React from "react";
 import Card from './Card';
-import contacts from '../data/data';
 import { useState } from 'react';
 import DirectoryFilter from "./DirectoryFilter";
 import DirectoryNew from "./DirectoryNew";
+import { useMyContext } from "../context/DirectoryProvider";
 
 function Directory(){
     const [filter, setFilter] = useState("");
-    const [data, setData] = useState([...contacts]);
+    // const [data, setData] = useState([...contacts]);
+    const {data} = useMyContext();
 
     var filteredContacts = data.filter((contact)=>{
       return contact.lname.toLowerCase().includes(filter) || contact.name.toLowerCase().includes(filter);
@@ -25,23 +26,17 @@ function Directory(){
   
     var totalAge = filteredContacts.reduce(
       (totalAge, {age})=>{
-        return totalAge + age;
+        return totalAge +  Number(age);
       }, 0
     )
 
     function updateFilter(event){
         setFilter(event.target.value.toLowerCase());
       }
-
-    function addEntry(newContact){
-      setData(prevData =>{
-        return[...prevData, newContact]
-      });
-    }
     
     return(
         <div>
-            <DirectoryNew action = {addEntry}/>
+            <DirectoryNew/>
             <hr/>
             <DirectoryFilter
                 value = {filter}

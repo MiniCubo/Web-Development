@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
+import { useMyContext } from "../context/DirectoryProvider";
 
 function DirectoryNew(props){
+    const {setData, addEntry} = useMyContext();
     const [entry, setEntry] = useState({
         name: "",
         lname: "",
@@ -9,6 +11,12 @@ function DirectoryNew(props){
         phone: "",
         age: 0,
    });
+
+//    function addEntry(newContact){
+//     setData(prevData =>{
+//       return[...prevData, newContact]
+//     });
+//   }
 
    function update(event){
     const {name, value} = event.target;
@@ -22,7 +30,7 @@ function DirectoryNew(props){
 
    function submit(event){
         event.preventDefault();
-        props.action(entry);
+        addEntry(entry);
         setEntry({
             name: "",
             lname: "",

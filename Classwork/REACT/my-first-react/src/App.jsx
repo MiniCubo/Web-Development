@@ -6,20 +6,25 @@ import Directory from './components/Directory';
 import Button from 'react-bootstrap/Button';
 import AppNavbar from './components/AppNavbar';
 import Profile from "./components/Profile";
-
+import QProfile from './components/QProfile';
 import { Routes,Route, Navigate } from 'react-router-dom';
+import DirectoryProvider from './context/DirectoryProvider';
 
 
 function App() {
 
-  var date = new Date();
-  var dateFormated = date.toUTCString();
+  // var date = new Date();
+  // var dateFormated = date.toUTCString();
   var number = Math.floor(Math.random()*10);
   const [login, setLogin] = useState(false);
 
   function conditionalRender(){
     if(login){
-      return <Directory/>
+      return(
+      <DirectoryProvider>
+        <Directory/>
+      </DirectoryProvider>
+      );
     }
     else{
       return(
@@ -39,7 +44,8 @@ function App() {
         <Route exact path="/" element={<Pictures/>} />
         <Route path="header" element={<Header num={number}/>}/>
         <Route path="directory" element={conditionalRender()} />
-        <Route path="profile" element={<Profile />} />
+        <Route path="profile/:handler" element={<Profile />} />
+        <Route path="qprofile" element={<QProfile />} />
         <Route path= "*" element={<Navigate to="/"/>}/>
       </Routes>
       {/* <header >

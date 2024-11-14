@@ -15,7 +15,8 @@ function AppNavbar(){
             <Nav.Link as= {Link} to="/">Home</Nav.Link>
             <Nav.Link as= {Link} to="/directory">Directory</Nav.Link>
             <Nav.Link as= {Link} to="/header">Header</Nav.Link>
-            <Nav.Link as= {Link} to="/profile">Profile</Nav.Link>
+            <Nav.Link as= {Link} to="/profile/Jill">Profile</Nav.Link>
+            <Nav.Link as= {Link} to="/qprofile?user=Jill">QProfile</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
