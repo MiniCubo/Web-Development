@@ -1,0 +1,11 @@
+.header{
+    background-color: #f5ba13 !important;
+    box-shadow: 1px 0px 5px grey;
+}
+
+.footer{
+    background-color: #f5ba13 !important;
+    position: fixed !important;
+    top: 98vh;
+    width: 100%;
+}

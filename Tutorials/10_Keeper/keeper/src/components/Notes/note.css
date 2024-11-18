@@ -1,0 +1,36 @@
+.note{
+    background-color: #ffffff;
+    box-shadow: 1px 1px 5px gray;
+    min-width: 200px;
+    max-width: fit-content;
+    min-height: 100px;
+    padding: 10px;
+    padding-right: 25px;
+    margin: 2vh 0vw;
+    position: relative;
+}
+
+.notesSection{
+    margin: 5vh 5vw;
+}
+
+.note h1{
+    font-size: 20px;
+}
+
+.note p{
+    margin-bottom: 40px;
+}
+
+.note button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    scale: 80%;
+}
+
+.form{
+    display: flex;
+    margin: 5vh 5vw;
+    flex-direction: column;
+}
