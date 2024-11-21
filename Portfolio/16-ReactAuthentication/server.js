@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const cookie = require("cookie-parser");
+const cookieParser = require("cookie-parser");
 const data = require("./data.js");
 const cors = require('cors');
 const jwt = require("jsonwebtoken");
@@ -9,7 +9,7 @@ require("dotenv").config();
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-app.use(cookie());
+app.use(cookieParser());
 
 const secretkey = process.env.SECRET_KEY;
 
@@ -34,12 +34,24 @@ const userSchema = new mongoose.Schema({
 });
 userSchema.set("strictQuery", true);
 
+const verifyToken = (req, res, next) => {
+    const token = req.cookies.token;
+    if (!token) next();
+
+    try {
+        const verified = jwt.verify(token, secretkey);
+        req.user = verified;
+        next();
+    } catch (err) {
+        next();
+    }
+};
+
 const Comment = new mongoose.model("Comment", commentSchema);
 const User = new mongoose.model("User", userSchema);
 
-app.get("/", (req, res)=>{
-    console.log(req.cookies);
-    res.send(data);
+app.get("/", verifyToken, (req, res)=>{
+    res.json({data, verified:req.user});
 });
 
 // const example = {
@@ -56,7 +68,7 @@ app.route("/comments/:title")
     const comments = await Comment.find({movie:movieName});
     res.send(comments);
 })
-.post(async(req, res)=>{
+.post(verifyToken, async(req, res)=>{
     var movie = req.body.movie;
     var author = req.body.author;
     var comment = req.body.comment;
@@ -89,12 +101,17 @@ app.post("/login", async(req, res)=>{
                 sameSite: 'strict',
                 maxAge: 8 * 60 * 60 * 1000,
             });
+            res.send("Cookies created");
         }
         else{
+            res.clearCookie("token");
+            res.clearCookie("name");
             return res.status(400).json({ error: "Username doesn't exist or the password is incorrect." });
         }
     }
     catch(error){
+        res.clearCookie("token");
+        res.clearCookie("name");
         res.send("Internal server error");
     }
 });
@@ -104,6 +121,8 @@ app.post("/register", async(req, res)=>{
 
     const existingUser = await User.collection.findOne({ user: name });
         if (existingUser) {
+            res.clearCookie("token");
+            res.clearCookie("name");
             return res.status(400).json({ error: "Username already exists." });
         }
 
@@ -114,7 +133,19 @@ app.post("/register", async(req, res)=>{
     User.collection.insertOne(user);
 
     const token = jwt.sign({ id: user.user }, secretkey, { expiresIn: "8h" });
-    res.json({token, name:user.user});
+    res.cookie('token', token, {
+        httpOnly: true,
+        secure: false, 
+        sameSite: 'strict',
+        maxAge: 8 * 60 * 60 * 1000,
+    });
+    res.cookie('name', name, {
+        httpOnly: false,
+        secure: false, 
+        sameSite: 'strict',
+        maxAge: 8 * 60 * 60 * 1000,
+    });
+    res.send("Cookies created");
 })
 
 app.listen(3500, ()=>{

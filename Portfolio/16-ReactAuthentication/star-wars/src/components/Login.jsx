@@ -27,12 +27,13 @@ function Login(){
         instance.post("/login", loginInformation).then(response=>{
             setRegisterFailed(false);
             setLoginFailed(false);
-            setToken(response.data.token);
-            setName(response.data.name);
-            console.log(response.data);
+            setToken(true);
+            setName(document.cookie.split(`name=`));
         }).catch(error=>{
             setLoginFailed(true);
             setRegisterFailed(false);
+            setToken(false);
+            setName("Guest");
         });
         setLoginInformation(
             {
@@ -47,11 +48,13 @@ function Login(){
         instance.post("/register", loginInformation).then(response=>{
             setRegisterFailed(false);
             setLoginFailed(false);
-            setToken(response.data.token);
-            setName(response.data.name);
+            setToken(true);
+            setName(document.cookie.split(`name=`));
         }).catch(error=>{
             setRegisterFailed(true);
             setLoginFailed(false);
+            setToken(false);
+            setName("Guest");
         });
         setLoginInformation(
             {

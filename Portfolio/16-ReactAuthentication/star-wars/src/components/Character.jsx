@@ -4,10 +4,12 @@ import { useParams } from "react-router-dom";
 import ComCard from "./Comments/ComCard";
 import Figure from 'react-bootstrap/Figure';
 import instance from "../api/star-wars";
+import { useLikesContext } from "../context/LikesProvider";
 
 function Character(props){
     const [cards, setCards] = useState([]);
     const {title} = useParams();
+    const {setVerified, verified} = useLikesContext();
     const [entry, setEntry] = useState({
         movie: "",
         author: "",
@@ -17,7 +19,8 @@ function Character(props){
 
     useEffect(()=>{
         instance.get("/").then(response=>{
-            setCards(response.data);
+            setCards(response.data.data);
+            setVerified(response.data.verified);
         })
         .catch(error=>{
             console.error("Fusdasdask you");
@@ -68,6 +71,24 @@ function Character(props){
         })
     }
 
+    function conditionalRendering(){
+        if(verified){
+            return(
+                <form className="comments" onSubmit={submit}>
+                    <h4>Add a comment</h4>
+                    <input type="text" value = {entry.author} name= "author" placeholder="Author" onChange={update}></input>
+                    <textarea row="5" value = {entry.comment} name= "comment" placeholder="What do you want to say?" onChange={update}></textarea>
+                    <input type="submit"/>
+                </form>
+            );
+        }
+        else{
+                return(
+                    <p>You can't comment if you are not signed in</p>
+            )
+            }
+    }
+
     async function submit(e){
         e.preventDefault();
         const response = await instance.post("/comments/"+title,entry);
@@ -103,12 +124,7 @@ function Character(props){
                     comment = {comment.comment}
                 />))}
             </div>
-            <form className="comments" onSubmit={submit}>
-                <h4>Add a comment</h4>
-                <input type="text" value = {entry.author} name= "author" placeholder="Author" onChange={update}></input>
-                <textarea row="5" value = {entry.comment} name= "comment" placeholder="What do you want to say?" onChange={update}></textarea>
-                <input type="submit"/>
-            </form>
+            {conditionalRendering()}
         </>
         
     )

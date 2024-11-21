@@ -14,6 +14,7 @@ function Character(props){
         comment: "",
     })
     const [comments, setComments] = useState([]);
+    
 
     useEffect(()=>{
         instance.get("/").then(response=>{
@@ -33,7 +34,6 @@ function Character(props){
         });
     }, []);
 
-    console.log("text", comments);
 
     var movie = cards.find((card)=>{
         return card.title === title
@@ -43,12 +43,12 @@ function Character(props){
         var {affiliation, name, image, bio} = movie.best_character;
     }
 
-    const [img_src, setImage] = useState("./images/"+image);
+    const [img_src, setImage] = useState("/images/"+image);
 
     var color = (affiliation === "Jedi" || affiliation === "Rebellion") ? "blue" : "red";
 
     useEffect(()=>{
-        setImage("./images/"+image)
+        setImage("/images/"+image)
     }, [image]);
 
     const style = {
@@ -56,7 +56,7 @@ function Character(props){
     };
 
     function Hover(){
-        setImage("./images/"+affiliation+".png");
+        setImage("/images/"+affiliation+".png");
     }
 
     function update(e){
@@ -89,7 +89,7 @@ function Character(props){
                 <Figure.Image
                     width={200}
                     height={300}
-                    src={img_src} alt={name} onMouseEnter={Hover} onMouseOut={()=>{setImage("./images/"+image)}}
+                    src={img_src} alt={name} onMouseEnter={Hover} onMouseOut={()=>{setImage("/images/"+image)}}
                 />
                 <Figure.Caption>
                     <h2>{name}</h2>
@@ -99,8 +99,9 @@ function Character(props){
             </Figure>
             <div className="comments">
                 <h4 style={{color:"blue"}}>Comments</h4>
-                {comments.map((comment)=>(
-                <ComCard 
+                {comments.map((comment, index)=>(
+                <ComCard
+                    key={index}
                     author={comment.author}
                     comment = {comment.comment}
                 />))}
