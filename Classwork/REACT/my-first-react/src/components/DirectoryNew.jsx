@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import { useMyContext } from "../context/DirectoryProvider";
+import { useMyContext, addContact } from "../context/DirectoryProvider";
 
 function DirectoryNew(props){
-    const {setData, addEntry} = useMyContext();
+    const {dispatch} = useMyContext();
     const [entry, setEntry] = useState({
         name: "",
         lname: "",
@@ -30,7 +30,7 @@ function DirectoryNew(props){
 
    function submit(event){
         event.preventDefault();
-        addEntry(entry);
+        addContact(dispatch, entry);
         setEntry({
             name: "",
             lname: "",

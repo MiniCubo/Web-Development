@@ -1,17 +1,14 @@
 import React from "react";
 import Card from './Card';
-import { useState } from 'react';
 import DirectoryFilter from "./DirectoryFilter";
 import DirectoryNew from "./DirectoryNew";
 import { useMyContext } from "../context/DirectoryProvider";
 
 function Directory(){
-    const [filter, setFilter] = useState("");
-    // const [data, setData] = useState([...contacts]);
-    const {data} = useMyContext();
+    const {state} = useMyContext();
 
-    var filteredContacts = data.filter((contact)=>{
-      return contact.lname.toLowerCase().includes(filter) || contact.name.toLowerCase().includes(filter);
+    var filteredContacts = state.contacts.filter((contact)=>{
+      return contact.lname.toLowerCase().includes(state.filter) || contact.name.toLowerCase().includes(state.filter);
     })
   
     var cards = filteredContacts.map((contact)=>(
@@ -30,18 +27,11 @@ function Directory(){
       }, 0
     )
 
-    function updateFilter(event){
-        setFilter(event.target.value.toLowerCase());
-      }
-    
     return(
         <div>
             <DirectoryNew/>
             <hr/>
-            <DirectoryFilter
-                value = {filter}
-                action = {updateFilter}
-            />
+            <DirectoryFilter/>
             <p>The average age is: {totalAge/cards.length}</p>
             {cards}
         </div>

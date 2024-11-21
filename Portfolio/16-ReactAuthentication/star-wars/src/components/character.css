@@ -1,0 +1,28 @@
+.char{
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 0ox 10% !important;
+    margin-bottom: 15px;
+}
+
+.char img{
+    width: 20%;
+    margin-right: 10%;
+}
+
+.char div{
+    width: 50%;
+}
+
+.comments{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.comments *{
+    margin: 0px;
+}

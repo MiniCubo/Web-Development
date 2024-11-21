@@ -1,19 +1,26 @@
-import React, {createContext, useContext, useState} from "react";
+import React, {createContext, useContext, useReducer} from "react";
 import contacts from "../data/data";
+import DirectoryReducer from "./DirectoryReducer";
+
 
 const DirectoryContext = createContext();
 
 function DirectoryProvider({children}){
-    const [data, setData] = useState([...contacts]);
+    const initialState = {
+        contacts,
+        filter : ""
+    }
 
-    function addEntry(newContact){
-        setData(prevData =>{
-          return[...prevData, newContact]
-        });
-      }
+    const [state, dispatch] = useReducer(DirectoryReducer, initialState);
+
+    // function addEntry(newContact){
+    //     setData(prevData =>{
+    //       return[...prevData, newContact]
+    //     });
+    //   }
 
     return(
-        <DirectoryContext.Provider value = {{data, setData, addEntry}}>
+        <DirectoryContext.Provider value = {{state, dispatch}}>
             {children}
         </DirectoryContext.Provider>
     );
@@ -23,5 +30,19 @@ function useMyContext(){
     return useContext(DirectoryContext);
 };
 
+function addContact(dispatch, newContact){
+    dispatch({
+        type: "ADD_CONTACT",
+        payload: newContact,
+    })
+}
+
+function filterContacts(dispatch, filter){
+    dispatch({
+        type:"FILTER",
+        payload: filter
+    })
+}
+
 export default DirectoryProvider;
-export { useMyContext};
+export { useMyContext, addContact, filterContacts };

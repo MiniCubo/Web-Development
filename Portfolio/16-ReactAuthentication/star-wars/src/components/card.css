@@ -1,0 +1,41 @@
+.card{
+    box-shadow: 1px 1px 10px grey;
+    width: 28vw;
+    height: 100vh;
+    margin: 15px;
+    border: 1px solid rgb(199, 199, 199);
+}
+
+.card img{
+    width: 100%;
+    height: 70%;
+}
+
+.card a{
+    color: lightblue;
+}
+
+.info{
+    padding: 10px;
+    position: relative;
+}
+
+.vote{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+
+.vote a, .vote img{
+    min-width: 20px;
+    min-height: 20px;
+    width: 50% !important;
+    height: 50% !important;
+    margin: 0px 5px;
+}
+
+.info div{
+    position:absolute;
+    right: 10px;
+    bottom: 10px;
+}
